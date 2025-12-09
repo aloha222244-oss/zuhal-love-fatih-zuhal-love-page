@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zuhal, seni seviyorum 💖</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        color: #ff4f9a;
+        font-size: 40px;
+        text-shadow: 0 0 20px #ff4f9a;
+        animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+        from { text-shadow: 0 0 10px #ff4f9a; }
+        to { text-shadow: 0 0 40px #ff4f9a; }
+    }
+    .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: pink;
+        transform: rotate(45deg);
+        animation: floatUp 4s linear infinite;
+    }
+    .heart:before, .heart:after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: pink;
+        border-radius: 50%;
+        position: absolute;
+    }
+    .heart:before { top: -10px; left: 0; }
+    .heart:after { left: -10px; top: 0; }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+        100% { transform: translateY(-600px) rotate(45deg); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<h1>ZUHAL 💗 SENİ ÇOK SEVİYORUM</h1>
+
+<script>
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.background = ["#ff77c0","#ff4fa3","#ffd1dc"][Math.floor(Math.random()*3)]
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),4000);
+}
+setInterval(createHeart,200);
+</script>
+
+</body>
+</html>
